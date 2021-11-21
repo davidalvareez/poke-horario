@@ -1,5 +1,8 @@
-function ListRandom() {
+window.onload = function() {
     saludo();
+}
+
+function ListRandom() {
     buttonOpacity();
     galleryRandom(0, 10, null, null);
 }
@@ -32,11 +35,11 @@ function buttonOpacity() {
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-var arr = [];
+
 
 
 function getListRandom(n, min, max) {
-
+    var arr = [];
     for (let i = 0; i < n; i++) {
         var numr = getRndInteger(min, max);
         if (arr.includes(numr)) {
