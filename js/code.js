@@ -1,4 +1,4 @@
-function listRandom() {
+function getListRandom() {
     buttonOpacity();
     galleryRandom(0, 10, null, null);
 }
