@@ -1,6 +1,24 @@
-function getListRandom() {
+function ListRandom() {
+    saludo();
     buttonOpacity();
     galleryRandom(0, 10, null, null);
+}
+
+function saludo() {
+    var hoy = new Date();
+    var hora = hoy.getHours();
+    if (hora < 7 || hora > 17) {
+        const h1 = document.getElementById('h1');
+        let HTMLString = '<h1>Buenas noches</h1>'
+        h1.innerHTML = HTMLString;
+        document.body.style.backgroundColor = "#3E3730"
+
+    } else {
+        const h1 = document.getElementById('h1');
+        let HTMLString = '<h1>Buenos dias</h1>'
+        h1.innerHTML = HTMLString;
+        document.body.style.backgroundColor = "rgb(238, 107, 47)"
+    }
 }
 
 function buttonOpacity() {
@@ -9,6 +27,25 @@ function buttonOpacity() {
     } else {
         document.getElementById("pokeball").style.opacity = "1";
     }
+}
+
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+var arr = [];
+
+
+function getListRandom(n, min, max) {
+
+    for (let i = 0; i < n; i++) {
+        var numr = getRndInteger(min, max);
+        if (arr.includes(numr)) {
+            i--
+        } else {
+            arr.push(numr);
+        }
+    }
+    return arr;
 }
 
 function galleryRandom(min, max, images, listRnd) {
